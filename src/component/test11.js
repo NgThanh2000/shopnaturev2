@@ -45,6 +45,14 @@ function Test11(){
         .catch((error) => {
           console.log(error.response.data);
         });
+
+        WooCommerce.get("products")
+  .then((response) => {
+        console.log(response.data);
+    })
+    .catch((error) => {
+        console.log(error.response.data);
+    });
     return(
         <p>terrtr</p>
     )
