@@ -69,15 +69,15 @@ function CheckOut(props){
           first_name: 'sda',
           last_name: 'add',
           address_1: 'đá',
-          email: '',
-          phone: ''
+          email: 'ds@gmail.com',
+          phone: '32352525'
         },
         shipping: {
-            first_name: '',
-            last_name: '',
-            address_1: '',
-            email: '',
-            phone: ''
+            first_name: 'gde',
+            last_name: 'egegrg',
+            address_1: 'sfhhfdsdf',
+            email: 'ds@gmail.com',
+            phone: '32352525'
         },
         line_items: [
           {
