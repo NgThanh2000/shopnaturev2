@@ -66,9 +66,9 @@ function CheckOut(props){
         payment_method_title: "Direct Bank Transfer",
         set_paid: true,
         billing: {
-          first_name: '',
-          last_name: '',
-          address_1: '',
+          first_name: 'sda',
+          last_name: 'add',
+          address_1: 'đá',
           email: '',
           phone: ''
         },
@@ -90,16 +90,17 @@ function CheckOut(props){
           }
         ]
       };
+      WooCommerce.post("orders", data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
       const handelCdb= () =>{
 
         data.billing.first_name = 'vl'
-        WooCommerce.post("orders", data)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error.response.data);
-        });
+    
       }
     return(
         <div className='CheckOut'>
