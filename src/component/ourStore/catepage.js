@@ -21,14 +21,24 @@ function CatePage(props){
         // Woocommerce.getProducts().then(function(response) {
         //     setOldProduct(response.data);
         // });
-        // Woocommerce.getCategories().then(function(response) {
-        //     setCategory(response.data);
-        //     // props.dispatchProduct(response.data);   
-        // })
-        // Woocommerce.getTags().then(function(response) {
-        //     st(response.data);
-        //     // props.dispatchProduct(response.data);   
-        // })
+        WooCommerce.get("products/categories")
+        .then((response) => {
+            //  props.dispatchProduct(response.data)
+            setCategory(response.data);
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error.response.data);
+            });
+        WooCommerce.get("products/tags")
+        .then((response) => {
+            //  props.dispatchProduct(response.data)
+            st(response.data);
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error.response.data);
+            });
         WooCommerce.get("products")
         .then((response) => {
             //  props.dispatchProduct(response.data)
