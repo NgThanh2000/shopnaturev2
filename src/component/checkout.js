@@ -66,28 +66,25 @@ function CheckOut(props){
         payment_method_title: "Direct Bank Transfer",
         set_paid: true,
         billing: {
-          first_name: 'sda',
-          last_name: 'add',
-          address_1: 'đá',
-          email: 'ds@gmail.com',
-          phone: '32352525'
+          first_name: firstName,
+          last_name: lastName,
+          address_1: address,
+          email: email,
+          phone: phone
         },
         shipping: {
-            first_name: 'gde',
-            last_name: 'egegrg',
-            address_1: 'sfhhfdsdf',
-            email: 'ds@gmail.com',
-            phone: '32352525'
+            first_name: firstName,
+            last_name: lastName,
+            address_1: address,
+            email: email,
+            phone: phone
         },
         line_items: [
           {
             product_id:id,
             quantity: quantity
           },
-          {
-            product_id: 151,
-            quantity: 1
-          }
+ 
         ]
       };
       WooCommerce.post("orders", data)
@@ -108,7 +105,6 @@ function CheckOut(props){
                 <div className="containercheck">
                     <form action="checkout" onSubmit={handelCdb} >
                         <h1>
-                            <i className="fas fa-shipping-fast"></i>
                             BILLING DETAILS
                         </h1>
                         <div className="name">

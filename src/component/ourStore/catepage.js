@@ -6,22 +6,38 @@ import Rating from '@mui/material/Rating';
 import {Link} from "react-router-dom";
 import {actAddToCart } from '../../actions/actions';
 function CatePage(props){
+    const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
+    const WooCommerce = new WooCommerceRestApi({
+        url: 'https://72.arrowhitech.net/tn3/thanh_reactjs/ShopNature', // Your store URL
+        consumerKey: 'ck_d77b2f06713eab0b76873176a0b14ffe8a041bc5', // Your consumer key
+        consumerSecret: 'cs_22508887be945bb2ca554c4ea49cd0c4c7d5eba3', // Your consumer secret
+        version: 'wc/v3' // WooCommerce WP REST API version
+        });
     const [tag, st] = useState([]);
     const [category, setCategory,] = useState([]);
     // const [productCate, setProductCate] = useState([]);
 
     useEffect(() => {
-        Woocommerce.getProducts().then(function(response) {
-            setOldProduct(response.data);
-        });
-        Woocommerce.getCategories().then(function(response) {
-            setCategory(response.data);
-            // props.dispatchProduct(response.data);   
-        })
-        Woocommerce.getTags().then(function(response) {
-            st(response.data);
-            // props.dispatchProduct(response.data);   
-        })
+        // Woocommerce.getProducts().then(function(response) {
+        //     setOldProduct(response.data);
+        // });
+        // Woocommerce.getCategories().then(function(response) {
+        //     setCategory(response.data);
+        //     // props.dispatchProduct(response.data);   
+        // })
+        // Woocommerce.getTags().then(function(response) {
+        //     st(response.data);
+        //     // props.dispatchProduct(response.data);   
+        // })
+        WooCommerce.get("products")
+        .then((response) => {
+            //  props.dispatchProduct(response.data)
+             setOldProduct(response.data);
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error.response.data);
+            });
     }, []);
    
     // const oldPo = props.finishDaTaWoo
