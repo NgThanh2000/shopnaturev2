@@ -87,16 +87,16 @@ function CheckOut(props){
  
         ]
       };
-      WooCommerce.post("orders", data)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
-      const handelCdb= () =>{
 
-        data.billing.first_name = 'vl'
+      const handelCdb= () =>{
+        
+        WooCommerce.post("orders", data)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
     
       }
     return(
