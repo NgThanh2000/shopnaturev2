@@ -25,7 +25,6 @@ function CatePage(props){
         .then((response) => {
             //  props.dispatchProduct(response.data)
             setCategory(response.data);
-                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error.response.data);
@@ -34,7 +33,7 @@ function CatePage(props){
         .then((response) => {
             //  props.dispatchProduct(response.data)
             st(response.data);
-                console.log(response.data);
+
             })
             .catch((error) => {
                 console.log(error.response.data);
@@ -43,7 +42,6 @@ function CatePage(props){
         .then((response) => {
             //  props.dispatchProduct(response.data)
              setOldProduct(response.data);
-                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error.response.data);
