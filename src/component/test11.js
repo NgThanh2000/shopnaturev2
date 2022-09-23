@@ -8,13 +8,43 @@ function Test11(){
     consumerSecret: 'cs_22508887be945bb2ca554c4ea49cd0c4c7d5eba3', // Your consumer secret
     version: 'wc/v3' // WooCommerce WP REST API version
     });
-    WooCommerce.get("products")
-    .then((response) => {
-        console.log(response.data);
-    })
-    .catch((error) => {
-        console.log(error.response.data);
-    });
+    const data = {
+        payment_method: "bacs",
+        payment_method_title: "Direct Bank Transfer",
+        set_paid: true,
+        billing: {
+          first_name: "Nguyen",
+          last_name: "Thanh",
+          address_1: "Viet Nam",
+          email: "john.doe@example.com",
+          phone: "22541154"
+        },
+        shipping: {
+            first_name: "Nguyen",
+            last_name: "Thanh",
+            address_1: "Viet Nam",
+            email: "john.doe@example.com",
+            phone: "22541154"
+        },
+        line_items: [
+          {
+            product_id: 155,
+            quantity: 2
+          },
+          {
+            product_id: 151,
+            quantity: 1
+          }
+        ]
+      };
+      
+      WooCommerce.post("orders", data)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
     return(
         <p>terrtr</p>
     )
