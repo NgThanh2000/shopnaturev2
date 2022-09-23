@@ -46,10 +46,10 @@ function Uoo(props){
         // });
     }, []);
     
-    const handleAddCart = (value) =>{
-        props.addtocart(value)
-        alert('You have added a product to your cart')
-    }
+    // const handleAddCart = (value) =>{
+    //     props.addtocart(value)
+    //     alert('You have added a product to your cart')
+    // }
 
     if(product.length>0){
     return(
@@ -64,7 +64,7 @@ function Uoo(props){
                             <h3>{value.name}</h3>
                             <p>$ {value.price}</p>
                         </Link>
-                        <button onClick={handleAddCart(value)}>ADD TO CARD</button>
+                        <button onClick={()=>props.addtocart(value)}>ADD TO CARD</button>
                     </div>                  
                 ))}           
             </div>
