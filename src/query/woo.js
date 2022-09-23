@@ -5,7 +5,7 @@ import jQuery from "jquery";
 
 const ck = 'ck_d77b2f06713eab0b76873176a0b14ffe8a041bc5'
 const cs = 'cs_22508887be945bb2ca554c4ea49cd0c4c7d5eba3'
-const baseURL = "http://localhost/ShopNature/wp-json";
+const baseURL = "https://72.arrowhitech.net/tn3/thanh_reactjs/ShopNature/wp-json/";
 
 const Woocommerce = {
   getProducts: () => {
