@@ -40,10 +40,10 @@ function Uoo(props){
                 console.log(error.response.data);
             });
 
-        Woocommerce.getProducts().then(function(response) {
-            setProducts(response.data);
-            // props.dispatchProduct(response.data);   
-        });
+        // Woocommerce.getProducts().then(function(response) {
+        //     setProducts(response.data);
+        //     props.dispatchProduct(response.data);   
+        // });
     }, []);
     
     if(product.length>0){

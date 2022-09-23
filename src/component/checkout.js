@@ -4,6 +4,18 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 
 function CheckOut(props){
+
+    const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
+    // import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api"; // Supports ESM
+
+    const WooCommerce = new WooCommerceRestApi({
+    url: 'https://72.arrowhitech.net/tn3/thanh_reactjs/ShopNature', // Your store URL
+    consumerKey: 'ck_d77b2f06713eab0b76873176a0b14ffe8a041bc5', // Your consumer key
+    consumerSecret: 'cs_22508887be945bb2ca554c4ea49cd0c4c7d5eba3', // Your consumer secret
+    version: 'wc/v3' // WooCommerce WP REST API version
+    });
+
+
     // console.log(props.mini.id)
 
     let id = '';
@@ -25,35 +37,75 @@ function CheckOut(props){
     const [email, setEmail] = useState('');
     const urlOrder = 'http://localhost/ShopNature/wp-json/wc/v3/orders/';
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        try{
-            axios.post(urlOrder,null,{
-                params: {
-                    first_name:firstName,
-                    last_name:lastName,
-                    address_1:address,
-                    email:email,
-                    phone:phone,
-                    product_id: id,
-                    quantity: quantity,
-                    // customer_id: props.cart.id_user
-                }}).then(function (response) {
-                    console.log(response.data);
-                }, 
-                function (error) {
-                    console.log(error);
-                })      
-        }   
-        catch(err){
-            console.log('sai');
-        }
-    }
+    // const handleSubmit = (e) =>{
+    //     e.preventDefault();
+    //     try{
+    //         axios.post(urlOrder,null,{
+    //             params: {
+    //                 first_name:firstName,
+    //                 last_name:lastName,
+    //                 address_1:address,
+    //                 email:email,
+    //                 phone:phone,
+    //                 product_id: id,
+    //                 quantity: quantity,
+    //                 // customer_id: props.cart.id_user
+    //             }}).then(function (response) {
+    //                 console.log(response.data);
+    //             }, 
+    //             function (error) {
+    //                 console.log(error);
+    //             })      
+    //     }   
+    //     catch(err){
+    //         console.log('sai');
+    //     }
+    // }
+    const data = {
+        payment_method: "bacs",
+        payment_method_title: "Direct Bank Transfer",
+        set_paid: true,
+        billing: {
+          first_name: '',
+          last_name: '',
+          address_1: '',
+          email: '',
+          phone: ''
+        },
+        shipping: {
+            first_name: '',
+            last_name: '',
+            address_1: '',
+            email: '',
+            phone: ''
+        },
+        line_items: [
+          {
+            product_id:id,
+            quantity: quantity
+          },
+          {
+            product_id: 151,
+            quantity: 1
+          }
+        ]
+      };
+      const handelCdb= () =>{
+
+        data.billing.first_name =firstName
+        WooCommerce.post("orders", data)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+        });
+      }
     return(
         <div className='CheckOut'>
             <div className="wrapper">
                 <div className="containercheck">
-                    <form action="checkout" onSubmit={handleSubmit} >
+                    <form action="checkout" onSubmit={handelCdb} >
                         <h1>
                             <i className="fas fa-shipping-fast"></i>
                             BILLING DETAILS
