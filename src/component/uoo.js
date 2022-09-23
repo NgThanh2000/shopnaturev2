@@ -33,11 +33,12 @@ function Uoo(props){
         WooCommerce.get("products")
         .then((response) => {
              props.dispatchProduct(response.data)
-                // console.log(response.data);
+                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error.response.data);
             });
+
         Woocommerce.getProducts().then(function(response) {
             setProducts(response.data);
             // props.dispatchProduct(response.data);   
