@@ -8,6 +8,7 @@ function Test11(){
     consumerSecret: 'cs_22508887be945bb2ca554c4ea49cd0c4c7d5eba3', // Your consumer secret
     version: 'wc/v3' // WooCommerce WP REST API version
     });
+    
     const data = {
         payment_method: "bacs",
         payment_method_title: "Direct Bank Transfer",
@@ -47,12 +48,12 @@ function Test11(){
         });
 
         WooCommerce.get("products")
-  .then((response) => {
-        console.log(response.data);
-    })
-    .catch((error) => {
-        console.log(error.response.data);
-    });
+        .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.log(error.response.data);
+            });
     return(
         <p>terrtr</p>
     )
