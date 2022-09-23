@@ -92,7 +92,7 @@ function CheckOut(props){
       };
       const handelCdb= () =>{
 
-        data.billing.first_name =firstName
+        data.billing.first_name = 'vl'
         WooCommerce.post("orders", data)
         .then((response) => {
           console.log(response.data);
