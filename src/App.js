@@ -18,6 +18,8 @@ import About from './component/ourStore/about';
 import Product from './component/ourStore/product';
 import CatePage from './component/ourStore/catepage';
 import Whitlist from "./component/ourStore/whislist";
+import Test11 from "./component/test11";
+
 function App() {
 
   useEffect(() => {
@@ -27,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+        <Test11 />
         <Routes>
           <Route path="" element={<Home />} />
           <Route path="ABOUT%20US" element={<About />} />
