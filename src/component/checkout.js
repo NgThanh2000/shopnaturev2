@@ -29,13 +29,15 @@ function CheckOut(props){
         id= props.items.Carts[item].id
         // console.log(id)
     });
+    const vl= {}
+    const yy =[]
     console.log(props.items)
     const ttt = props.items.Carts.map((ii,i)=>{
-        console.log(ii.product_id)
-        console.log(ii.quantity)
+        vl.product_id ="ii.product_id"
+        vl.quantity ="ii.quantity"
     })
 
-    console.log( ttt)
+    console.log( vl)
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
