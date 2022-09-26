@@ -30,10 +30,13 @@ function CheckOut(props){
         // console.log(id)
     });
 
+    const [product_id, setProduct_id] = useState('');
+    const [quantityyy, setQuantity] = useState('');
     for( let v2 of props.items.Carts){
-        console.log(v2.product_id)
-        console.log(v2.quantity)
+        setProduct_id(v2.product_id)
+        setQuantity(v2.quantity)
     }
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
@@ -86,8 +89,8 @@ function CheckOut(props){
         },
         line_items: [
             {
-            product_id: 155,
-            quantity: 2
+            product_id: product_id,
+            quantity: quantityyy
             }
         ]
       };
