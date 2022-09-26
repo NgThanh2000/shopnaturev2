@@ -43,10 +43,7 @@ function CheckOut(props){
        console.log(v3);
        setVba(v3);
     }
-    const v4 = [
-        ...vba
-    ]
-    console.log(v4)
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
@@ -105,7 +102,7 @@ function CheckOut(props){
         ]
       };
 
-      data.line_items.push(...v4)
+      data.line_items.push(...vba)
       console.log(data);
 
       const handelCdb= () =>{
