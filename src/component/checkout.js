@@ -90,7 +90,7 @@ function CheckOut(props){
         ]
       };
       
-      data.line_items.push(...props.items.Carts.slice(0,2))
+      data.line_items.push(...props.items.Carts)
       console.log(data.line_items);
       const handelCdb= () =>{
         WooCommerce.post("orders", data)
