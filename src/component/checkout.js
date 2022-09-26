@@ -42,8 +42,9 @@ function CheckOut(props){
         }
        console.log(v3);
        setVba(v3);
-       v5.push(...v3)
+       
     }
+    v5.push(...vba)
     console.log(vba)
     console.log(v5)
     const [firstName, setFirstName] = useState('');
