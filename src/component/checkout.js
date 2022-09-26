@@ -34,7 +34,7 @@ function CheckOut(props){
     // const [quantityyy, setQuantity] = useState('');
 
     const [vba, setVba] = useState([]);
-
+    const v5 = []
     for( let v2 of props.items.Carts){
         const v3 = {
             product_id:v2.product_id,
@@ -42,8 +42,10 @@ function CheckOut(props){
         }
        console.log(v3);
        setVba(v3);
+       v5.push(...v3)
     }
     console.log(vba)
+    console.log(v5)
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
