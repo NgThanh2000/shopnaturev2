@@ -29,17 +29,10 @@ function CheckOut(props){
         id= props.items.Carts[item].id
         // console.log(id)
     });
-    const vl= {}
-    const yy =[]
-    console.log(props.items)
-    const ttt = props.items.Carts.map((ii,i)=>{
-        vl.product_id =ii.product_id
-        vl.quantity =ii.quantity
-    })
 
-    console.log( ttt)
-    
-    console.log( vl)
+    for( let i= 0; i < props.items.Carts.length; i++){
+        console.log(i)
+    }
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
@@ -97,9 +90,7 @@ function CheckOut(props){
             }
         ]
       };
-      delete props.items.Carts[0].name
-      delete props.items.Carts[0].image
-      delete props.items.Carts[0].price
+
       data.line_items.push(...props.items.Carts)
       console.log(data);
 
