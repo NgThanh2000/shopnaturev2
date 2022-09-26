@@ -33,20 +33,17 @@ function CheckOut(props){
     // const [product_id, setProduct_id] = useState('');
     // const [quantityyy, setQuantity] = useState('');
 
-    const [vba, setVba] = useState([]);
-    const v5 = []
+    // const [vba, setVba] = useState([]);
+        
     for( let v2 of props.items.Carts){
-        const v3 = {
-            product_id:v2.product_id,
-            quantity:v2.quantity
-        }
-       console.log(v3);
-       setVba(v3);
-       
+    const v3 = {
+        product_id:v2.product_id,
+        quantity:v2.quantity
     }
-    v5.push(...vba)
-    console.log(vba)
-    console.log(v5)
+    console.log(v3);
+    }
+ 
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
