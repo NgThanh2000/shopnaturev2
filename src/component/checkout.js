@@ -95,7 +95,7 @@ function CheckOut(props){
         ]
       };
 
-      data.line_items.push(...props.items.Carts)
+    //   data.line_items.push(...props.items.Carts)
       console.log(data);
 
       const handelCdb= () =>{
