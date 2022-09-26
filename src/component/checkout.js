@@ -35,15 +35,15 @@ function CheckOut(props){
 
     const [vba, setVba] = useState('');
 
-    const v5 = () =>{for( let v2 of props.items.Carts){
+    for( let v2 of props.items.Carts){
         const v3 = {
             product_id:v2.product_id,
             quantity:v2.quantity
         }
-       return v3;
-    //    setVba(v3);
-    }}
-    console.log(v5)
+       console.log(v3);
+       setVba(v3);
+    }
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
@@ -99,7 +99,7 @@ function CheckOut(props){
         ]
       };
 
-      data.line_items.push(...v5)
+      data.line_items.push(...vba)
       console.log(data);
 
       const handelCdb= () =>{
