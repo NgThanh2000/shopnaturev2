@@ -30,8 +30,8 @@ function CheckOut(props){
         // console.log(id)
     });
 
-    for( let i= 0; i < props.items.Carts.length; i++){
-        console.log(i)
+    for( let v2 of props.items.Carts){
+        console.log(v2)
     }
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
