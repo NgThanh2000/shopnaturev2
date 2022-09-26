@@ -30,8 +30,8 @@ function CheckOut(props){
         // console.log(id)
     });
 
-    const [product_id, setProduct_id] = useState('');
-    const [quantityyy, setQuantity] = useState('');
+    // const [product_id, setProduct_id] = useState('');
+    // const [quantityyy, setQuantity] = useState('');
 
     const [vba, setVba] = useState('');
 
@@ -95,10 +95,7 @@ function CheckOut(props){
             phone: phone
         },
         line_items: [
-            {
-            product_id: product_id,
-            quantity: quantityyy
-            }
+          
         ]
       };
 
