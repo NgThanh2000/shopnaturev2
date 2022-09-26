@@ -30,10 +30,11 @@ function CheckOut(props){
         // console.log(id)
     });
     console.log(props.items)
-    const MANU = true;
-    const cocaidb = { ...(MANU && {id: id})}
+    const ttt = props.items.Carts.map((ii,i)=>{
+        console.log(ii)
+    })
 
-    console.log( cocaidb)
+    console.log( ttt)
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
