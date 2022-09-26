@@ -33,8 +33,11 @@ function CheckOut(props){
     const [product_id, setProduct_id] = useState('');
     const [quantityyy, setQuantity] = useState('');
     for( let v2 of props.items.Carts){
-        setProduct_id(v2.product_id)
-        setQuantity(v2.quantity)
+        const v3 = {
+            product_id:v2.product_id,
+            quantity:v2.quantity
+        }
+       console.log(v3);
     }
 
     const [firstName, setFirstName] = useState('');
