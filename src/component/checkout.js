@@ -29,7 +29,7 @@ function CheckOut(props){
         id= props.items.Carts[item].id
         // console.log(id)
     });
-
+    console.log(props.items)
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
@@ -84,12 +84,10 @@ function CheckOut(props){
             product_id:id,
             quantity: quantity
           },
- 
         ]
       };
 
       const handelCdb= () =>{
-        
         WooCommerce.post("orders", data)
         .then((response) => {
           console.log(response.data);
@@ -97,7 +95,6 @@ function CheckOut(props){
         .catch((error) => {
           console.log(error.response.data);
         });
-    
       }
     return(
         <div className='CheckOut'>
