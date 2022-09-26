@@ -84,7 +84,7 @@ const finishCart = (state=initialState ,action) =>{
                 })
             }
         default:
-            return state;
+            return state;   
     }
 }
 export default finishCart;

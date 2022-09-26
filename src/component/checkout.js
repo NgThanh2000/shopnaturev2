@@ -94,7 +94,7 @@ function CheckOut(props){
       };
       
       data.line_items.push(...props.items.Carts)
-      console.log(data.line_items);
+      console.log(data);
 
       const handelCdb= () =>{
         WooCommerce.post("orders", data)
