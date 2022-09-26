@@ -27,7 +27,7 @@ function CheckOut(props){
         ListCart.push(props.items.Carts[item]);
         quantity=props.items.Carts[item].quantity
         id= props.items.Carts[item].id
-        // console.log(id)
+        console.log(id)
     });
 
     // const [product_id, setProduct_id] = useState('');
@@ -36,11 +36,11 @@ function CheckOut(props){
     // const [vba, setVba] = useState([]);
         
     for( let v2 of props.items.Carts){
-    const v3 = {
-        product_id:v2.product_id,
-        quantity:v2.quantity
-    }
-    console.log(v3);
+        const v3 = {
+            product_id:v2.product_id,
+            quantity:v2.quantity
+        }
+        console.log(v3);
     }
  
 
@@ -50,31 +50,6 @@ function CheckOut(props){
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const urlOrder = 'http://localhost/ShopNature/wp-json/wc/v3/orders/';
-
-    // const handleSubmit = (e) =>{
-    //     e.preventDefault();
-    //     try{
-    //         axios.post(urlOrder,null,{
-    //             params: {
-    //                 first_name:firstName,
-    //                 last_name:lastName,
-    //                 address_1:address,
-    //                 email:email,
-    //                 phone:phone,
-    //                 product_id: id,
-    //                 quantity: quantity,
-    //                 // customer_id: props.cart.id_user
-    //             }}).then(function (response) {
-    //                 console.log(response.data);
-    //             }, 
-    //             function (error) {
-    //                 console.log(error);
-    //             })      
-    //     }   
-    //     catch(err){
-    //         console.log('sai');
-    //     }
-    // }
 
     const data = {
         payment_method: "bacs",
@@ -99,7 +74,7 @@ function CheckOut(props){
         ]
       };
 
-      data.line_items.push(vba)
+    //   data.line_items.push(vba)
       console.log(data);
 
       const handelCdb= () =>{
@@ -177,7 +152,31 @@ const mapStateToProps = (state) =>{
 }
 export default connect(mapStateToProps)(CheckOut);
 
-
+    
+    // const handleSubmit = (e) =>{
+    //     e.preventDefault();
+    //     try{
+    //         axios.post(urlOrder,null,{
+    //             params: {
+    //                 first_name:firstName,
+    //                 last_name:lastName,
+    //                 address_1:address,
+    //                 email:email,
+    //                 phone:phone,
+    //                 product_id: id,
+    //                 quantity: quantity,
+    //                 // customer_id: props.cart.id_user
+    //             }}).then(function (response) {
+    //                 console.log(response.data);
+    //             }, 
+    //             function (error) {
+    //                 console.log(error);
+    //             })      
+    //     }   
+    //     catch(err){
+    //         console.log('sai');
+    //     }
+    // }
         //   {/* <h1>
         //                 <i className="far fa-credit-card"></i> Payment Information
         //             </h1>
