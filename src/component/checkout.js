@@ -86,12 +86,16 @@ function CheckOut(props){
             phone: phone
         },
         line_items: [
-         
+            {
+            product_id: 155,
+            quantity: 2
+            }
         ]
       };
       
       data.line_items.push(...props.items.Carts)
       console.log(data.line_items);
+
       const handelCdb= () =>{
         WooCommerce.post("orders", data)
         .then((response) => {
