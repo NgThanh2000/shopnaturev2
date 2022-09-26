@@ -30,6 +30,11 @@ function CheckOut(props){
         // console.log(id)
     });
     console.log(props.items)
+    const MANU = true;
+    const cocaidb = { ...(MANU && {id: id})}
+
+    console.log( cocaidb)
+
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
