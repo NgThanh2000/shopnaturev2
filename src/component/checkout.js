@@ -36,10 +36,10 @@ function CheckOut(props){
     const [vba, setVba] = useState([]);
 
     for( let v2 of props.items.Carts){
-        const v3 = {
+        const v3 = [{
             product_id:v2.product_id,
             quantity:v2.quantity
-        }
+        }]
        console.log(v3);
        setVba(v3);
     }
