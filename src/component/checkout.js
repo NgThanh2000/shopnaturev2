@@ -81,10 +81,7 @@ function CheckOut(props){
             phone: phone
         },
         line_items: [
-          {
-            product_id:id,
-            quantity: quantity
-          },
+         
         ]
       };
       console.log(data.line_items);
