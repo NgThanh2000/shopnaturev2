@@ -31,7 +31,8 @@ function CheckOut(props){
     });
     console.log(props.items)
     const ttt = props.items.Carts.map((ii,i)=>{
-        console.log(ii)
+        console.log(ii.product_id)
+        console.log(ii.quantity)
     })
 
     console.log( ttt)
