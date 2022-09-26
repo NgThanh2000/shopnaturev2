@@ -26,7 +26,7 @@ const finishCart = (state=initialState ,action) =>{
             console.log(action.payload)
             if(state.numberCart == 0){
                 let cart = {
-                    id:action.payload.id,
+                    product_id:action.payload.id,
                     quantity:1,
                     name:action.payload.name,
                     image:action.payload.images[0].src,
@@ -38,14 +38,14 @@ const finishCart = (state=initialState ,action) =>{
             else{
                 let check = false
                 state.Carts.map((item,i)=>{
-                    if(item.id == action.payload.id){
+                    if(item.product_id == action.payload.id){
                         state.Carts[i].quantity++
                         check=true
                     }
                 })
                 if(!check){
                     let _cart={
-                        id:action.payload.id,
+                        product_id:action.payload.id,
                         quantity:1,
                         name:action.payload.name,
                         image:action.payload.images[0].src,
@@ -80,7 +80,7 @@ const finishCart = (state=initialState ,action) =>{
                 ...state,
                 numberCart:state.numberCart - _quantity,
                 Carts:state.Carts.filter(item =>{
-                    return item.id!==state.Carts[action.payload].id
+                    return item.product_id!==state.Carts[action.payload].id
                 })
             }
         default:
