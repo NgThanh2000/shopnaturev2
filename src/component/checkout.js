@@ -33,12 +33,13 @@ function CheckOut(props){
     const yy =[]
     console.log(props.items)
     const ttt = props.items.Carts.map((ii,i)=>{
-        vl.product_id ="ii.product_id"
-        vl.quantity ="ii.quantity"
+        vl.product_id =ii.product_id
+        vl.quantity =ii.quantity
     })
 
+    console.log( ttt)
+    
     console.log( vl)
-
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [address, setAdress] = useState('');
