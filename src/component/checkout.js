@@ -99,7 +99,7 @@ function CheckOut(props){
         ]
       };
 
-      data.line_items.push(...vba)
+      data.line_items.push(vba)
       console.log(data);
 
       const handelCdb= () =>{
