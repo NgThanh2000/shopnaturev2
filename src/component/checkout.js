@@ -61,6 +61,7 @@ function CheckOut(props){
     //         console.log('sai');
     //     }
     // }
+
     const data = {
         payment_method: "bacs",
         payment_method_title: "Direct Bank Transfer",
@@ -86,7 +87,7 @@ function CheckOut(props){
           },
         ]
       };
-
+      console.log(data.line_items);
       const handelCdb= () =>{
         WooCommerce.post("orders", data)
         .then((response) => {
