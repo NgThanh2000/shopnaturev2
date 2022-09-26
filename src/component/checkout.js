@@ -97,9 +97,9 @@ function CheckOut(props){
             }
         ]
       };
-      delete props.items.Carts.name
-      delete props.items.Carts.image
-      delete props.items.Carts.price
+      delete props.items.Carts[0].name
+      delete props.items.Carts[0].image
+      delete props.items.Carts[0].price
       data.line_items.push(...props.items.Carts)
       console.log(data);
 
